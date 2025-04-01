@@ -1,49 +1,60 @@
 # Recipe & Ingredient Manager
 
-A full-stack web app built with Flask and MySQL to manage recipes and their ingredients.
-Users can view, add, and delete recipes, as well as upload a picture of the dish.
+A full-stack web application built with Flask and MySQL that includes a user-friendly web interface for managing recipes and ingredients. Users can add, edit, delete, and view recipes along with their instructions, ingredients, and images.
 
 ## Features
 
-- Add, update, and delete recipes
-- Attach images to recipes
-- Manage ingredients per recipe
-- Responsive UI with Bootstrap
-- REST API endpoints
+- Add, update, and delete recipes via a responsive web interface  
+- Attach images to recipes (uploaded and displayed)  
+- Manage individual ingredients per recipe  
+- Full CRUD functionality with persistent MySQL database  
+- REST API endpoints available for programmatic access
 
 ## Technologies Used
 
-- Python (Flask)
-- MySQL
-- SQLAlchemy
-- HTML, CSS (Bootstrap)
-- JavaScript
+- Python (Flask)  
+- MySQL, SQLAlchemy  
+- HTML, CSS (Bootstrap)  
+- JavaScript  
+- Jinja2 templating engine
+
+## Frontend
+
+The application includes a full HTML/CSS interface built with Flask’s Jinja2 templates and styled with Bootstrap.
+
+-  Browse all recipes from the homepage  
+-  View individual recipes with ingredients and instructions  
+-  Add new recipes via a form (with image upload support)  
+-  Images are uploaded and rendered directly in the app
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.x
-- MySQL
-- `pip install -r requirements.txt`
+- Python 3.x  
+- MySQL  
+- Required Python packages:
+  ```bash
+  pip install -r requirements.txt
+  ```
 
 ### Database Setup
 
-Create a `.env` file in the root directory with the following variables:
+1. Create a `.env` file in the root directory with the following content:
 
-```
-MYSQL_USER=your_mysql_user
-MYSQL_PASSWORD=your_mysql_password
-MYSQL_HOST=localhost
-MYSQL_PORT=3306
-MYSQL_DB=recipe_app
-```
+    ```
+    MYSQL_USER=your_mysql_user
+    MYSQL_PASSWORD=your_mysql_password
+    MYSQL_HOST=localhost
+    MYSQL_PORT=3306
+    MYSQL_DB=recipe_app
+    ```
 
-Create the database in MySQL Workbench or the CLI:
+2. Create the database in MySQL:
 
-```sql
-CREATE DATABASE recipe_app;
-```
+    ```sql
+    CREATE DATABASE recipe_app;
+    ```
 
 ### Run the App
 
@@ -51,15 +62,15 @@ CREATE DATABASE recipe_app;
 python run.py
 ```
 
-Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+Then open your browser to [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ## API Endpoints
 
-- `GET /recipes` – List all recipes
-- `POST /recipes` – Add a recipe with ingredients
-- `PUT /recipes/<id>` – Update a recipe
-- `DELETE /recipes/<id>` – Delete a recipe
-- `POST /recipes/<id>/upload-image` – Upload image for a recipe
+- `GET /recipes` – List all recipes (JSON)  
+- `POST /recipes` – Add a recipe with ingredients  
+- `PUT /recipes/<id>` – Update a recipe  
+- `DELETE /recipes/<id>` – Delete a recipe  
+- `POST /recipes/<id>/upload-image` – Upload image to a recipe
 
 ## Folder Structure
 
@@ -82,6 +93,3 @@ restructured_recipe_app/
 └── README.md
 ```
 
-## License
-
-This project is for educational purposes and not production-ready. Feel free to build on it!
