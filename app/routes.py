@@ -4,7 +4,7 @@ from app.models import Recipe, Ingredient, RecipeIngredient
 from werkzeug.utils import secure_filename
 import os, json
 from app.models import Recipe
-from flask import current_app  # add this at the top
+from flask import current_app 
 
 
 def init_routes(app):
